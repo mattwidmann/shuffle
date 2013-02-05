@@ -1,10 +1,12 @@
+EXE = shuffle
 SOURCES = shuffle.c
+
 CC = clang
 CFLAGS = -std=c11 -Wextra -pedantic -Werror
 
 default: debug
 
-shuffle: shuffle.o
+$(EXE): shuffle.o
 
 %.o: %.c %.d
 
@@ -21,6 +23,9 @@ release: shuffle
 
 clean:
 	rm -f *.o *.d shuffle
+
+install: release
+	cp $(EXE) ~/.bin/
 
 include $(subst .c,.d,$(SOURCES))
 
