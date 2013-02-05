@@ -1,6 +1,6 @@
 SOURCES = shuffle.c
 CC = clang
-CFLAGS = -Wextra -pedantic -Werror
+CFLAGS = -std=c11 -Wextra -pedantic -Werror
 
 default: debug
 
